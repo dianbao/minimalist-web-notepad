@@ -1,6 +1,8 @@
 Minimalist Web Notepad
 ======================
 /var/www/minimalist-web-notepad/_tmp
+
+
 This is an open source clone of notepad.cc, which is now defunct.
 
 See demo at https://notes.orga.cat or https://notes.orga.cat/whatever.
@@ -43,7 +45,7 @@ Build the container:
 docker build -t minimalist-web-notepad .
 ```
 
-Start the container:
+Start the container:.
 ```
 docker run -itd --name minimalist-web-notepad -p 80:80 minimalist-web-notepad
 ```
