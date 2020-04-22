@@ -15,8 +15,8 @@ header('Expires: 0');
 // If no name is provided or it contains invalid characters or it is too long.
 if (!isset($_GET['note']) || !preg_match('/^[a-zA-Z0-9_-]+$/', $_GET['note']) || strlen($_GET['note']) > 64) {
 
-    // Generate a name with 5 random unambiguous characters. Redirect to it.
-    header("Location: $base_url/" . substr(str_shuffle('234579abcdefghjkmnpqrstwxyz'), -5));
+    // Generate a name with 3 random unambiguous characters. Redirect to it.
+    header("Location: $base_url/" . substr(str_shuffle('123456789abcdefghjkmnpqrstwxyz'), -3));
     die;
 }
 
