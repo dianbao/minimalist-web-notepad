@@ -55,7 +55,7 @@ if (isset($_GET['raw']) || strpos($_SERVER['HTTP_USER_AGENT'], 'curl') === 0) {
 </head>
 <body>
     <div class="container">
-        短网址(快.过去): https://kuai.gq/<?php print $_GET['note']; ?>
+        短网址(快.过去): <span id="url">https://kuai.gq/<?php print $_GET['note']; ?></span><button id="copyBT">复制</button>
         <textarea id="content"><?php
             if (is_file($path)) {
                 print htmlspecialchars(file_get_contents($path), ENT_QUOTES, 'UTF-8');
@@ -64,5 +64,19 @@ if (isset($_GET['raw']) || strpos($_SERVER['HTTP_USER_AGENT'], 'curl') === 0) {
     </div>
     <pre id="printable"></pre>
     <script src="<?php print $base_url; ?>/script.js"></script>
+    	<script>
+      function copyArticle(event) {
+        const range = document.createRange();
+        range.selectNode(document.getElementById('url'));
+ 
+        const selection = window.getSelection();
+        if(selection.rangeCount > 0) selection.removeAllRanges();
+        selection.addRange(range);
+        document.execCommand('copy');
+        alert("成功,打开即可查看本页内容");
+      }
+ 
+      document.getElementById('copyBT').addEventListener('click', copyArticle, false);
+    </script>
 </body>
 </html>
