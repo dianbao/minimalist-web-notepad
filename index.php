@@ -51,11 +51,11 @@ if (isset($_GET['raw']) || strpos($_SERVER['HTTP_USER_AGENT'], 'curl') === 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Minimalist Web Notepad (https://github.com/pereorga/minimalist-web-notepad)">
     <title>kuai.qg/<?php print $_GET['note']; ?></title>
-    <link rel="shortcut icon" href="<?php print $base_url; ?>/favicon.ico">
     <link rel="stylesheet" href="<?php print $base_url; ?>/styles.css">
 </head>
 <body>
     <div class="container">
+        短网址(快.过去): https://kuai.gq/<?php print $_GET['note']; ?>
         <textarea id="content"><?php
             if (is_file($path)) {
                 print htmlspecialchars(file_get_contents($path), ENT_QUOTES, 'UTF-8');
