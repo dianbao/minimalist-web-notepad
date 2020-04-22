@@ -55,7 +55,7 @@ if (isset($_GET['raw']) || strpos($_SERVER['HTTP_USER_AGENT'], 'curl') === 0) {
 </head>
 <body>
     <div class="container">
-        短网址(快.过去): <span id="url">https://kuai.gq/<?php print $_GET['note']; ?></span><button id="copyBT">复制</button>
+        快.过去: <span id="url">https://kuai.gq/<?php print $_GET['note']; ?></span><button id="copyBT">复制</button>
         <textarea id="content"><?php
             if (is_file($path)) {
                 print htmlspecialchars(file_get_contents($path), ENT_QUOTES, 'UTF-8');
