@@ -1,6 +1,6 @@
 Minimalist Web Notepad
 ======================
-
+/var/www/minimalist-web-notepad/_tmp
 This is an open source clone of notepad.cc, which is now defunct.
 
 See demo at https://notes.orga.cat or https://notes.orga.cat/whatever.
