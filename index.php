@@ -1,11 +1,11 @@
 <?php
 
 // Base URL of the website, without trailing slash.
-$base_url = getenv('MWN_BASE_URL') ?: 'https://notes.orga.cat';
+$base_url = 'https://simaplenote.us-south.cf.appdomain.cloud';
 
 // Path to the directory to save the notes in, without trailing slash.
 // Should be outside of the document root, if possible.
-$save_path = getenv('MWN_SAVE_PATH') ?: '_tmp';
+$save_path = '_tmp';
 
 // Disable caching.
 header('Cache-Control: no-cache, no-store, must-revalidate');
@@ -15,8 +15,8 @@ header('Expires: 0');
 // If no name is provided or it contains invalid characters or it is too long.
 if (!isset($_GET['note']) || !preg_match('/^[a-zA-Z0-9_-]+$/', $_GET['note']) || strlen($_GET['note']) > 64) {
 
-    // Generate a name with 5 random unambiguous characters. Redirect to it.
-    header("Location: $base_url/" . substr(str_shuffle('123456789abcdefghjkmnpqrstwxyz'), -5));
+    // Generate a name with 2 random unambiguous characters. Redirect to it.
+    header("Location: $base_url/" . substr(str_shuffle('123456789abcdefghjkmnpqrstwxyz'), -2));
     die;
 }
 
